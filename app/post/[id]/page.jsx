@@ -18,9 +18,6 @@ export default async function Post({ params }) {
   const postData = postJson.blog;
   const postImage = postData.photo_url;
 
-  console.log(userData);
-  console.log(postData);
-
   return (
     <div>
       <h1>
