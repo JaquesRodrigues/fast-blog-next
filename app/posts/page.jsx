@@ -10,14 +10,22 @@ export default async function Posts() {
   let posts = data.blogs;
   return (
     <div>
-      <h1>Posts</h1>
+      <h1 className="text-6xl font-bold text-center text-white">Posts</h1>
       {posts ? (
         posts.map((post) => {
           return (
-            <div key={post.id}>
-              <Link href={`/post/${post.id}`}>{post.title}</Link>
-              <h2>{post.category}</h2>
-              <p>{formatPostDate(post.created_at)}</p>
+            <div className="p-4" key={post.id}>
+              <Link
+                className="underline hover:text-slate-700"
+                href={`/post/${post.id}`}
+              >
+                {post.title}
+              </Link>
+              <h2>
+                Category:{" "}
+                <span className="font-bold capitalize">{post.category}</span>
+              </h2>
+              <p>Postado em: {formatPostDate(post.created_at)}</p>
             </div>
           );
         })
